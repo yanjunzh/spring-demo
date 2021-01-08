@@ -1,13 +1,15 @@
 package com.example.demo;
 
 public class HelloWorld {
-    private String name;
+    private final String HELLO_TEMPLATE_ENG = "Hello, %s!";
 
-    public HelloWorld(String name) {
-        this.name = name;
+    private String hello;
+
+    public HelloWorld(String username) {
+        this.hello = String.format(HELLO_TEMPLATE_ENG, username);
     }
 
-    public String getName() {
-        return this.name;
+    public String getHello() {
+        return this.hello;
     }
 }
