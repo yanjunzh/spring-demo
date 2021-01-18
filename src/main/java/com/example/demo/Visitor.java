@@ -1,9 +1,9 @@
 package com.example.demo;
 
-public class User {
+public class Visitor {
     private String name;
 
-    public User(String name) {
+    public Visitor(String name) {
         this.name = name;
     }
 
