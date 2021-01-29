@@ -20,13 +20,13 @@ public class DemoController {
     }
 
     @GetMapping("/register")
-    public String register(@RequestParam String name) {
+    public Object register(@RequestParam String name) {
         List<User> users = userRepository.findAllByName(name);
 
         if(users.isEmpty()) {
-            return "Member registered: " + userRepository.save(new User(name));
+            return userRepository.save(User.builder().name(name).build());
         }
-        return "Member already existed: " + users;
+        return users;
     }
 
     @GetMapping("/users")
